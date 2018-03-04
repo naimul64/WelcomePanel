@@ -1,13 +1,11 @@
 package welcome.window;
 
 import propertyReader.PropertyReader;
-import welcome.view.Panel;
 import welcome.viewControl.ShowAndCloseFrame;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.TimerTask;
 
 public class Hello {
     public static void main(String[] args) {
