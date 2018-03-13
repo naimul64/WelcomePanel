@@ -6,6 +6,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.net.URL;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
@@ -47,10 +48,10 @@ public class Panel {
     }
 
     private JLabel getJlabelWithImage() {
-        Path gifPath = Paths.get(System.getProperty("user.dir"), "assets", "gif");
-        Path imagePath = Paths.get(gifPath.toString(), "analog_clock.gif");
+        Path imagePath = Paths.get("..", "..", "gif", "analog_clock.gif");
+        URL url = getClass().getResource(imagePath.toString());
 
-        Icon imageIcon = new ImageIcon(imagePath.toString());
+        Icon imageIcon = new ImageIcon(url);
 
         return new JLabel(imageIcon);
     }
