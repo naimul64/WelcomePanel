@@ -9,9 +9,11 @@ import java.awt.event.ActionListener;
 import java.net.URL;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.logging.Logger;
 
 public class Panel {
     public JFrame frame;
+    Logger logger = Logger.getAnonymousLogger();
     public void showWelcomePanel(String title) {
         frame = new JFrame(title);
         frame.setLayout(new BorderLayout());
@@ -48,7 +50,7 @@ public class Panel {
     }
 
     private JLabel getJlabelWithImage() {
-        Path imagePath = Paths.get("..", "..", "gif", "analog_clock.gif");
+        Path imagePath = Paths.get("analog_clock.gif");
         URL url = getClass().getResource(imagePath.toString());
 
         Icon imageIcon = new ImageIcon(url);

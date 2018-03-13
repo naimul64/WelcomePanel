@@ -1,7 +1,5 @@
 package propertyReader;
 
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
@@ -16,9 +14,9 @@ public class PropertyReader {
         InputStream input = null;
 
         try {
-            Path configFilePath = Paths.get(/*System.getProperty("user.dir"),*/ "src", "config", "config.property");
+            Path configFilePath = Paths.get("config.property");
 
-            URL url = configFilePath.toUri().toURL();
+            URL url = PropertyReader.class.getResource(configFilePath.toString());
             input = url.openStream();
 
             // load a properties file
@@ -29,6 +27,7 @@ public class PropertyReader {
             return prop.getProperty(propertyKey);
         } catch (IOException ex) {
             ex.printStackTrace();
+            System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
         } finally {
             if (input != null) {
                 try {
